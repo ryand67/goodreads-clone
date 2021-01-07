@@ -7,6 +7,7 @@ import { useState } from 'react';
 export default function Home() {
   const [searchAuthor, setSearchAuthor] = useState('');
   const [searchTitle, setSearchTitle] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const BOOK_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchTitle}+inauthor:${searchAuthor}&orderBy=relevance&key=AIzaSyB_-s2BfbodxkeNLMLomAGJJbaRWhwSd-k`;
 
@@ -21,7 +22,10 @@ export default function Home() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios.get(BOOK_URL)
-      .then(res => console.log(res.data.items));
+      .then(res => {
+        console.log(res);
+        setSearchResults(res);
+      })
   }
 
   return (
