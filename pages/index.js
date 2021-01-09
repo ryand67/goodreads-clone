@@ -23,8 +23,8 @@ export default function Home() {
     e.preventDefault();
     axios.get(BOOK_URL)
       .then(res => {
-        console.log(res);
-        setSearchResults(res);
+
+        setSearchResults(res.data.items);
       })
   }
 
@@ -49,7 +49,9 @@ export default function Home() {
         </div>
       </form>
 
-      <BookEntry />
+      {searchResults.map(item => {
+        return <BookEntry data={item} />
+      })}
     </div>
   )
 }
