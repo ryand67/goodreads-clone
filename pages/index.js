@@ -32,7 +32,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>BestReads</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://www.nicepng.com/png/full/17-173735_book-icon-green-book-icon-png.png" />
       </Head>
       <form onSubmit={() => handleFormSubmit(e)} className={styles.searchForm} action="">
         <div className={styles.query}>
