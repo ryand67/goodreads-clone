@@ -16,7 +16,7 @@ export default function BookEntry({ data }) {
                 {data.volumeInfo.subtitle ? <h2>{data.volumeInfo.subtitle}</h2> : <></>}
                 {data.volumeInfo.pageCount ? <p className={styles.bookLength}>{data.volumeInfo.pageCount} pages</p> : <></>}
                 {data.volumeInfo.description ? <p className={styles.bookDesc}>{data.volumeInfo.description}</p> : <></>}
-                {data.volumeInfo.canonicalVolumeLink ? <button onClick={() => handleStoreButtonClick(data.volumeInfo.canonicalVolumeLink)}>Google Books Page</button> : <></>}
+                {data.volumeInfo.canonicalVolumeLink ? <button className={styles.storeButton} onClick={() => handleStoreButtonClick(data.volumeInfo.canonicalVolumeLink)}>Google Books Page</button> : <></>}
             </div>
         </div>
     )
