@@ -22,8 +22,11 @@
 .bookInfo {
     margin-left: 2em;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
-.storeButton {
+.entryButton {
     margin-bottom: 1em;
+    width: 100px;
 }
