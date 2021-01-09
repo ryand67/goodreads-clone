@@ -6,8 +6,11 @@ export default function BookEntry({ data }) {
     return (
         <div className={styles.bookEntry}>
             <img className={styles.bookImg} src={data.volumeInfo.imageLinks.thumbnail} alt=""/>
-            <div className="bookInfo">
-                <h1 className={styles.bookTitle}>{data.volumeInfo.title}</h1>
+            <div className={styles.bookInfo}>
+                <h1 >{data.volumeInfo.title}</h1>
+                {data.volumeInfo.subtitle ? <h2>{data.volumeInfo.subtitle}</h2> : <></>}
+                {data.volumeInfo.pageCount ? <p className={styles.bookLength}>{data.volumeInfo.pageCount} pages</p> : <></>}
+                <p className={styles.bookDesc}>{data.volumeInfo.description}</p>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 .bookEntry {
-    height: 20em;
     width: 65%;
-    border: 3px solid black;
+    border: 3px solid rgb(102, 102, 102);
+    border-radius: 15px;
     margin: 1.5em 0;
     display: flex;
     flex-direction: row;
@@ -11,8 +11,14 @@
     margin: auto 0;
     margin-left: 1em;
     height: 90%;
+    width: auto;
 }
 
-.bookTitle {
-    margin-left: .5em;
+.bookDesc {
+    width: 95%;
+}
+
+.bookInfo {
+    margin-left: 2em;
+    text-align: left;
 }
