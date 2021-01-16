@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </form>
 
-      {/* Maps through search results */}
+      {/* Maps through search results  */}
       {searchResults.map(item => {
         return <BookEntry data={item} />
       })}
