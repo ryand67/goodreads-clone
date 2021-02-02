@@ -5,12 +5,15 @@ import BookEntry from '../components/BookEntry';
 import { useState } from 'react';
 
 export default function Home() {
+  //States
   const [searchAuthor, setSearchAuthor] = useState('');
   const [searchTitle, setSearchTitle] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
+  //API links
   const BOOK_URL = `https://www.googleapis.com/books/v1/volumes?q=${searchTitle}+inauthor:${searchAuthor}&orderBy=relevance&key=AIzaSyB_-s2BfbodxkeNLMLomAGJJbaRWhwSd-k`;
 
+  //Changes states on change
   const handleTitleChange = (e) => {
     setSearchTitle(e.target.value);
   }
@@ -19,6 +22,7 @@ export default function Home() {
     setSearchAuthor(e.target.value);
   }
 
+  //Grabs the data on submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios.get(BOOK_URL)
@@ -49,6 +53,7 @@ export default function Home() {
         </div>
       </form>
 
+      {/* Maps through search results  */}
       {searchResults.map(item => {
         return <BookEntry data={item} />
       })}
